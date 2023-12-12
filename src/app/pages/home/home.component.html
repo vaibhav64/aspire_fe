@@ -1,0 +1,35 @@
+<div class = "logo-container fc" *ngIf = "mobileView">
+    <div class = "logo-img">Image</div>
+    <div class = "logo-txt">Text</div>
+</div>
+<div class = "home-container fr">
+    <div class = "side-nav" *ngIf = "!mobileView">
+        <div class = "logo-container fc">
+            <div class = "logo-img">Image</div>
+            <div class = "logo-txt">Text</div>
+        </div>
+        <div class = "menu-container fc">
+            <div class = "menu-item">Home ></div>
+            <div class = "menu-item">Cards ></div>
+            <div class = "menu-item">Payments ></div>
+        </div>
+    </div>
+    <div class = "app-body fc w-100">
+        <div class = "body-header fr">
+            <div class = "avail-balance">
+                <div class = "">Available balance</div>
+                <div class = "">S$ {{dataService.currentCard().card_details.balance}}</div>
+            </div>
+            <button mat-raised-button color="primary" (click)="openDialog()">New Card</button>
+        </div> 
+        <app-card-tabs></app-card-tabs>
+    </div>
+</div>
+<div class = "menu-footer" *ngIf = "mobileView">
+    <div class = "menu-container fr">
+        <div class = "menu-item">Home ></div>
+        <div class = "menu-item">Cards ></div>
+        <div class = "menu-item">Payments ></div>
+    </div>
+</div>
+    

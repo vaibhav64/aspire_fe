@@ -1,0 +1,7 @@
+<div class = "transac-container">
+    <ul>
+        <li *ngFor = "let transaction of dataService.currentCard().transactions">
+            {{transaction.for}} - {{transaction.desc}}
+        </li>
+    </ul>
+</div>

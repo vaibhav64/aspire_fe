@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>What's the use for this card?</h1>
+<div mat-dialog-content>
+  <p></p>
+  <h6>Fill in these fields for easy reference, expecially if this card is for a specific use case e.g. Facebook Ads.</h6>
+  <mat-form-field>
+    <mat-label>Card name (e.g. Google Ads)</mat-label>
+    <input matInput [(ngModel)]="data">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Continue</button>
+</div>

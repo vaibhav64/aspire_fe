@@ -1,0 +1,13 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" (selectedIndexChange)="onTabchange($event)">
+    @for (cards of dataService.cardResponse(); track cards){
+        <mat-tab [label]="cards.copy">
+            <div class = "tab-container"> 
+                <div class = "tab-body"> 
+                    <app-carousal-card></app-carousal-card>
+                    <app-card-action></app-card-action>
+                </div>
+                <app-card-transactions></app-card-transactions>
+            </div>
+        </mat-tab>
+    }
+</mat-tab-group>

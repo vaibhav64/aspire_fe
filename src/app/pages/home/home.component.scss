@@ -1,0 +1,28 @@
+.side-nav{
+    display: flex;
+    flex-direction: column;
+    background-color: #0C365A;
+    padding: 0.5rem;
+}
+.menu-footer{
+    background-color: #0C365A;
+    padding: 0.5rem;
+}
+.logo-container{
+    background-color: Black;
+    color: white;
+    padding: 0.5rem;
+}
+.menu-container{
+    padding: 0.5rem;
+    color: white;
+}
+// app-body start
+.app-body{
+    padding: 0.5rem;
+}
+.body-header{
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+// app-body end

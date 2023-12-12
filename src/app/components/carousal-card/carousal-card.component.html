@@ -1,0 +1,10 @@
+<div class = "slider">
+    <ng-container *ngIf = "dataService.currentCard()">
+        <div class = "slide">{{dataService.currentCard().card_details.name}}</div>
+    </ng-container>
+    <div class = "navigation">
+        <div class = "leftArrow" (click) = "goToPrev()"><</div>
+        <app-carousal-dots></app-carousal-dots>
+        <div class = "rightArrow" (click) = "goToNext()">></div>
+    </div>
+</div>
