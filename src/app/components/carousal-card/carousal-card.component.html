@@ -1,6 +1,26 @@
 <div class = "slider">
     <ng-container *ngIf = "dataService.currentCard()">
-        <div class = "slide">{{dataService.currentCard().card_details.name}}</div>
+        <div class="container">
+            <div class = "logo">
+                <img src="images/logo.png" alt="" />
+            </div>
+            <div class = "name">
+                <h5 class="name">{{dataService.currentCard().card_details.name}}</h5>
+            </div>
+            <div class="card-details">
+              <div class="number">
+                <h5 class="number">{{dataService.currentCard().card_details.number}}</h5> 
+              </div>
+              <div class="valid-date">
+                <h5>Thru: {{dataService.currentCard().card_details.validity_month}}/{{dataService.currentCard().card_details.validity_year}}</h5>
+                <h5 class = "cvv">CVV: {{dataService.currentCard().card_details.cvv}}</h5>
+              </div>
+            </div>
+            <div class = "visalogo">
+                <img src="images/logo.png" alt="" />
+            </div>
+          </div>
+        
     </ng-container>
     <div class = "navigation">
         <div class = "leftArrow" (click) = "goToPrev()"><</div>

@@ -44,4 +44,18 @@ export class CardDataService {
   const newIndex = isFirstSlide ? this.cardsData().cards.length - 1 : this.currentCardIndex() - 1;
   this.currentCardIndex.set(newIndex);
  }
+
+ onFreezeCard() : void{
+  this.cardResponse.update(value => value.map((val,i) => {
+    if(i == this.currentTabIndex()) val.cards[this.currentCardIndex()].card_details.freezed = 1;
+    return val;
+  }));
+ }
+
+ onCancleCard() : void{
+  this.cardResponse.update(value => value.map((val,i) => {
+    if(i == this.currentTabIndex()) val.cards.splice(this.currentCardIndex(),1);
+    return val;
+  }));
+ }
 }

@@ -2,7 +2,50 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    >.leftArrow, >.rightArrow{
+        padding: 0 10px 0 10px;
+    }
 }
-.slide{
-    text-align: center;
+
+.slider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.container {
+    position: relative;
+    background-color: #01D167;
+    background-size: cover;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 380px;
+    margin: 32px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+  }
+  h6 {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  h5.number {
+    margin-top: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .container .card-details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .valid-date {
+    display: flex;
+  }
+  .cvv{
+    margin-left: 36px;
+  }

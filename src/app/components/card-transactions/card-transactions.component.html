@@ -1,7 +1,53 @@
 <div class = "transac-container">
-    <ul>
-        <li *ngFor = "let transaction of dataService.currentCard().transactions">
-            {{transaction.for}} - {{transaction.desc}}
-        </li>
-    </ul>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState_1 = true"
+        (closed)="panelOpenState_1 = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+        Card Details
+        </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{dataService.currentCard().card_details.name}}</p>
+        <p>{{dataService.currentCard().card_details.number}}</p>
+        <p>{{dataService.currentCard().card_details.cvv}}</p>
+        </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Recent transactions
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        @for (transaction of dataService.currentCard().transactions; track $index) {
+            <div class = "fc trans-container">
+                <div class = "fr tr-name">
+                    <div>
+                        {{transaction.for}}
+                    </div>
+                    <div>
+                        @if (transaction.is_debit == 1) {
+                            - S$ {{transaction.amount}}
+                        }
+                        @else {
+                            + S$ {{transaction.amount}}
+                        }
+                        
+                    </div>
+                </div>
+                <div class = "fr">
+                    <div>
+                        {{transaction.on_date}} {{transaction.on_month}} {{transaction.on_year}}
+                    </div>
+                </div>
+                <div class = "fr">
+                    <div>
+                        {{transaction.desc}}
+                    </div>
+                </div>
+            </div>
+            
+        }
+    </mat-expansion-panel>
+  </mat-accordion>
+    
 </div>
